@@ -615,16 +615,16 @@ def build_augmentation(cfg, is_train):
             )
         )
         augmentation.append(
-            T.RandomApply(T.RandomContrast(0.7,1.3),p=0.5)
+            T.RandomApply(T.RandomContrast(0.7,1.3),prob=0.5)
         )
         augmentation.append(
-            T.RandomApply(T.RandomSaturation(0.7,1.3),p=0.5)
+            T.RandomApply(T.RandomSaturation(0.7,1.3),prob=0.5)
         )
         augmentation.append(
-            T.RandomApply(T.RandomBrightness(0.7,1.3),p=0.5)
+            T.RandomApply(T.RandomBrightness(0.7,1.3),prob=0.5)
         )
         augmentation.append(
-            T.RandomApply(T.RandomRotation(angle=(0,30)),p=0.5)
+            T.RandomApply(T.RandomRotation(angle=(0,30)),prob=0.5)
         )
         
     return augmentation
