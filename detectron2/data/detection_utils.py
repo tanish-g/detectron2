@@ -614,6 +614,19 @@ def build_augmentation(cfg, is_train):
                 vertical=cfg.INPUT.RANDOM_FLIP == "vertical",
             )
         )
+        augmentation.append(
+            T.RandomApply(T.RandomContrast(0.7,1.3),p=0.5)
+        )
+        augmentation.append(
+            T.RandomApply(T.RandomSaturation(0.7,1.3),p=0.5)
+        )
+        augmentation.append(
+            T.RandomApply(T.RandomBrightness(0.7,1.3),p=0.5)
+        )
+        augmentation.append(
+            T.RandomApply(T.RandomRotation(angle=(0,30)),p=0.5)
+        )
+        
     return augmentation
 
 
